@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidpagelayout.PageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/PageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:page_orientation="vertical">
+    <TextView
+        android:id="@+id/Page1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Page1"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:page_view="true" />
+    <TextView
+        android:id="@+id/Page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Page2"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_bright"
+        app:page_view="true" />
+    <TextView
+        android:id="@+id/Page3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Page3"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"
+        app:page_view="true" />
+    <TextView
+        android:id="@+id/Page4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Page4"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_bright"
+        app:page_view="true" />
+</androidpagelayout.PageLayout>

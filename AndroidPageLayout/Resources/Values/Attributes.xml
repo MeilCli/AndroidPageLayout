@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <declare-styleable name="PageLayout">
+    <attr name="page_orientation" format="enum">
+      <enum name="vertical" value="0"/>
+      <enum name="horizontal" value="1"/>
+    </attr>
+    <attr name="page_multi_size" format="integer"/>
+    <attr name="page_view" format="boolean"/>
+  </declare-styleable>
+</resources>

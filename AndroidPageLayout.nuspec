@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata minClientVersion="2.8.3">
+		<id>Meilcli.Android.PageLayout</id>
+		<version>1.0.0</version>
+		<title>PageLayout for Xamarin.Android</title>
+		<authors>meilcli</authors>
+		<owners>meilcli</owners>
+		<licenseUrl>https://github.com/MeilCli/AndroidPageLayout/blob/master/LICENSE.txt</licenseUrl>
+		<projectUrl>https://github.com/MeilCli/AndroidPageLayout</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+PageLayout for Xamarin.Android
+This layout is ViewPager-like layout but non used Adapter
+		</description>
+		<summary>PageLayout Library</summary>
+		<tags>xamarin, android, page, pagelayout, viewpager</tags>
+		<dependencies>
+			<group targetFramework="MonoAndroid70">
+				<dependency id="Meilcli.Android.SlideLayout" version="1.0.1" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="AndroidPageLayout\bin\Release\AndroidPageLayout.dll" target="lib\MonoAndroid70" />
+		<file src="AndroidPageLayout\bin\Release\AndroidPageLayout.xml" target="lib\MonoAndroid70" />
+		<file src="AndroidPageLayout\bin\Release\AndroidPageLayout.pdb" target="lib\MonoAndroid70" />
+	</files>
+</package>

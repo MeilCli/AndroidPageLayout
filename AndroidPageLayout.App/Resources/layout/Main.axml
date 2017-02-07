@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidpagelayout.PageLayout
+        android:id="@+id/PageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:page_orientation="vertical"
+        android:background="@android:color/darker_gray"
+        android:transitionGroup="true">
+        <TextView
+            android:id="@+id/SimpleVertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Simple Vertical"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_dark"
+            app:page_view="true" />
+        <TextView
+            android:id="@+id/SimpleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Simple Horizontal"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_bright"
+            app:page_view="true" />
+        <TextView
+            android:id="@+id/SimpleNestedScrollingParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Simple Nested Scrolling Parent"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_dark"
+            app:page_view="true" />
+        <TextView
+            android:id="@+id/SimpleMultiplePage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Simple Multiple Page"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_bright"
+            app:page_view="true" />
+        <TextView
+            android:id="@+id/DynamicAddOrRemovePage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Dynamic Add or Remove Page"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_dark"
+            app:page_view="true" />
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:columnCount="2"
+            app:rowCount="2"
+            app:page_view="true">
+            <ImageView
+                android:id="@+id/Image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"
+                app:layout_columnWeight="1"/>
+            <ImageView
+                android:id="@+id/Image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"
+                app:layout_columnWeight="1"/>
+            <ImageView
+                android:id="@+id/Image3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"
+                app:layout_columnWeight="1"/>
+            <ImageView
+                android:id="@+id/Image4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"
+                app:layout_columnWeight="1"/>
+        </android.support.v7.widget.GridLayout>
+    </androidpagelayout.PageLayout>
+</LinearLayout>

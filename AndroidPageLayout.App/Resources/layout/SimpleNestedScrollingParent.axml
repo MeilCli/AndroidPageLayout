@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidpagelayout.PageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/PageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:page_orientation="vertical">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:page_view="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Item1"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:text="Item1"
+                android:gravity="center"
+                android:background="@android:color/holo_blue_dark" />
+            <TextView
+                android:id="@+id/Item2"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:text="Item2"
+                android:gravity="center"
+                android:background="@android:color/holo_blue_bright" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:page_view="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Item3"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:text="Item3"
+                android:gravity="center"
+                android:background="@android:color/holo_blue_dark" />
+            <TextView
+                android:id="@+id/Item4"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:text="Item4"
+                android:gravity="center"
+                android:background="@android:color/holo_blue_bright" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</androidpagelayout.PageLayout>
