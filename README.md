@@ -22,6 +22,9 @@ Install-Package Meilcli.Android.PageLayout
 - Support NestedScrollView in Page (PageLayout implements NestedScrollingParent)
 - Support vertical and horizontal orientation.
 
+## API Document
+[API Document](https://meilcli.github.io/AndroidPageLayout/)
+
 ## Usage
 How use in your Project? see [sample AndroidPageLayout.App](/AndroidPageLayout.App)!!!
 
