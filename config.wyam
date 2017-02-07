@@ -1,0 +1,13 @@
+Settings[Keys.Host] = "meilcli.github.io";
+Settings[Keys.LinkRoot] = "AndroidPageLayout";
+Settings[Keys.LinksUseHttps] = true;
+Settings[Keys.LinkHideExtensions] = false;
+
+FileSystem.InputPaths.Add("AndroidPageLayout.Docs/input");
+FileSystem.OutputPath = "docs";
+
+Settings[DocsKeys.Title] = "AndroidPageLayout";
+Settings[DocsKeys.SourceFiles] = "../../AndroidPageLayout/AndroidPageLayout/**/*.cs";
+Settings[DocsKeys.BaseEditUrl] = "https://github.com/MeilCli/AndroidPageLayout/tree/master/AndroidPageLayout.Docs/input/";
+
+System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
