@@ -408,6 +408,15 @@ namespace AndroidPageLayout {
         }
 
         /// <summary>
+        /// Get Page
+        /// </summary>
+        /// <param name="index">get page index</param>
+        /// <returns>page's view</returns>
+        public View GetPage(int index) {
+            return linearStackLayout.GetChildAt(index);
+        }
+
+        /// <summary>
         /// Add page
         /// </summary>
         /// <param name="view">page</param>
