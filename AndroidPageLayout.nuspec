@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata minClientVersion="2.8.3">
 		<id>Meilcli.Android.PageLayout</id>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<title>PageLayout for Xamarin.Android</title>
 		<authors>meilcli</authors>
 		<owners>meilcli</owners>
