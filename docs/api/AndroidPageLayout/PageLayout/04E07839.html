@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/AndroidPageLayout/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/AndroidPageLayout/assets/img/favicon.ico" type="image/x-icon">
-        <title>AndroidPageLayout - API - PageLayout.PageLayout(Context) Constructor</title>
+        <title>AndroidPageLayout - API - PageLayout.GetPage(int) Method</title>
         <link href="/AndroidPageLayout/assets/css/mermaid.css" rel="stylesheet">
         <link href="/AndroidPageLayout/assets/css/highlight.css" rel="stylesheet">
         <link href="/AndroidPageLayout/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -70,7 +70,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -129,7 +130,7 @@
 		<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout">PageLayout</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Constructors</li>
-				<li class="selected"><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/F131B050.html">PageLayout<wbr>(Context)<wbr></a></li>
+				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/F131B050.html">PageLayout<wbr>(Context)<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/71111557.html">PageLayout<wbr>(Context, <wbr>IAttributeSet)<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/D829DFCB.html">PageLayout<wbr>(Context, <wbr>IAttributeSet, <wbr>int)<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/55F0414C.html">PageLayout<wbr>(IntPtr, <wbr>JniHandleOwnership)<wbr></a></li>
@@ -157,7 +158,7 @@
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/20378594.html">Generate<wbr>Default<wbr>Layout<wbr>Params<wbr>()<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/D691F980.html">GenerateLayoutParams<wbr>(IAttributeSet)<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/8BB41F42.html">GenerateLayoutParams<wbr>(ViewGroup<wbr>.LayoutParams)<wbr></a></li>
-				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/04E07839.html">GetPage<wbr>(int)<wbr></a></li>
+				<li class="selected"><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/04E07839.html">GetPage<wbr>(int)<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/7864C460.html">OnAttachedToWindow<wbr>()<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/1AF46315.html">OnDetachedFromWindow<wbr>()<wbr></a></li>
 				<li><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout/FD12E37C.html">On<wbr>Intercept<wbr>Touch<wbr>Event<wbr>(MotionEvent)<wbr></a></li>
@@ -194,12 +195,16 @@
 
 <section class="content-header">
 			<h3><a href="/AndroidPageLayout/api/AndroidPageLayout/PageLayout">PageLayout</a>.</h3>
-	<h1>PageLayout<wbr>(Context)<wbr> <small>Constructor</small></h1>
+	<h1>GetPage<wbr>(int)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Get Page
+    </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -215,7 +220,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public PageLayout(Context context)</code></pre>
+	<pre><code>public View GetPage(int index)</code></pre>
 
 
 
@@ -233,9 +238,9 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>context</td>
-						<td>Context</td>
-						<td></td>
+						<td>index</td>
+						<td>int</td>
+						<td>get page index</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -252,8 +257,8 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>void</td>
-					<td></td>
+					<td>View</td>
+					<td>page's view</td>
 				</tr>
 			</tbody></table>
 		</div>

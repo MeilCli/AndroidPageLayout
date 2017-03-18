@@ -1,15 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
-using Android.Widget;
 
 namespace AndroidPageLayout {
 
@@ -27,7 +20,7 @@ namespace AndroidPageLayout {
                 return _multiplePageSize;
             }
             set {
-                if(value < 0) {
+                if (value < 0) {
                     throw new NotSupportedException("not support less thann 0 page size");
                 }
                 _multiplePageSize = value;
@@ -41,7 +34,7 @@ namespace AndroidPageLayout {
                 return _orientation;
             }
             set {
-                if(value != Vertical && value != Horizontal) {
+                if (value != Vertical && value != Horizontal) {
                     throw new NotSupportedException("not support undefined orientation");
                 }
                 _orientation = value;
@@ -51,13 +44,13 @@ namespace AndroidPageLayout {
 
         public LinearStackLayout(Context context) : base(context) { }
 
-        public LinearStackLayout(Context context,IAttributeSet attr) : base(context,attr) { }
+        public LinearStackLayout(Context context, IAttributeSet attr) : base(context, attr) { }
 
-        public LinearStackLayout(Context context,IAttributeSet attr,int defStyle) : base(context,attr,defStyle) { }
+        public LinearStackLayout(Context context, IAttributeSet attr, int defStyle) : base(context, attr, defStyle) { }
 
-        public LinearStackLayout(IntPtr javaReference,JniHandleOwnership transfer) : base(javaReference,transfer) { }
+        public LinearStackLayout(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer) { }
 
-        protected override void OnMeasure(int widthMeasureSpec,int heightMeasureSpec) {
+        protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             int measureWidth = MeasureSpec.GetSize(widthMeasureSpec);
             int measureHeight = MeasureSpec.GetSize(heightMeasureSpec);
             var measureWidthMode = MeasureSpec.GetMode(widthMeasureSpec);
@@ -67,46 +60,46 @@ namespace AndroidPageLayout {
             int height = 0;
             int childState = 0;
 
-            for(int i = 0;i < ChildCount;i++) {
+            for (int i = 0; i < ChildCount; i++) {
                 var child = GetChildAt(i);
-                if(child.Visibility != ViewStates.Gone) {
+                if (child.Visibility != ViewStates.Gone) {
                     int childWidth = measureWidth;
                     int childHeight = measureHeight;
                     var childWidthMode = measureWidthMode;
                     var childHeightMode = measureHeightMode;
-                    if(Orientation == Vertical) {
+                    if (Orientation == Vertical) {
                         childHeight = (measureHeight / ChildCount) / MultiplePageSize;
                         childHeightMode = MeasureSpecMode.Exactly;
-                    } else if(Orientation == Horizontal) {
+                    } else if (Orientation == Horizontal) {
                         childWidth = (measureWidth / ChildCount) / MultiplePageSize;
                         childWidthMode = MeasureSpecMode.Exactly;
                     }
-                    child.Measure(MeasureSpec.MakeMeasureSpec(childWidth,childWidthMode),MeasureSpec.MakeMeasureSpec(childHeight,childHeightMode));
-                    if(Orientation == Vertical) {
-                        width = Math.Max(width,child.MeasuredWidth);
+                    child.Measure(MeasureSpec.MakeMeasureSpec(childWidth, childWidthMode), MeasureSpec.MakeMeasureSpec(childHeight, childHeightMode));
+                    if (Orientation == Vertical) {
+                        width = Math.Max(width, child.MeasuredWidth);
                         height += child.MeasuredHeight;
-                    } else if(Orientation == Horizontal) {
+                    } else if (Orientation == Horizontal) {
                         width += child.MeasuredWidth;
-                        height = Math.Max(height,child.MeasuredHeight);
+                        height = Math.Max(height, child.MeasuredHeight);
                     }
-                    childState = CombineMeasuredStates(childState,child.MeasuredState);
+                    childState = CombineMeasuredStates(childState, child.MeasuredState);
                 }
             }
 
-            SetMeasuredDimension(ResolveSizeAndState(width,widthMeasureSpec,childState),ResolveSizeAndState(height,heightMeasureSpec,childState));
+            SetMeasuredDimension(ResolveSizeAndState(width, widthMeasureSpec, childState), ResolveSizeAndState(height, heightMeasureSpec, childState));
         }
 
-        protected override void OnLayout(bool changed,int l,int t,int r,int b) {
+        protected override void OnLayout(bool changed, int l, int t, int r, int b) {
             int currentTop = 0;
             int currentLeft = 0;
 
-            for(int i = 0;i < ChildCount;i++) {
+            for (int i = 0; i < ChildCount; i++) {
                 var child = GetChildAt(i);
-                if(child.Visibility != ViewStates.Gone) {
-                    child.Layout(currentLeft,currentTop,currentLeft + child.MeasuredWidth,currentTop + child.MeasuredHeight);
-                    if(Orientation == Vertical) {
+                if (child.Visibility != ViewStates.Gone) {
+                    child.Layout(currentLeft, currentTop, currentLeft + child.MeasuredWidth, currentTop + child.MeasuredHeight);
+                    if (Orientation == Vertical) {
                         currentTop += child.MeasuredHeight;
-                    } else if(Orientation == Horizontal) {
+                    } else if (Orientation == Horizontal) {
                         currentLeft += child.MeasuredWidth;
                     }
                 }

@@ -1,13 +1,13 @@
-﻿using Android.App;
-using Android.Widget;
+﻿using System;
+using Android.App;
 using Android.OS;
-using Android.Views;
-using System;
 using Android.Support.V7.App;
+using Android.Views;
+using Android.Widget;
 
 namespace AndroidPageLayout.App {
 
-    [Activity(Label = "AndroidPageLayout.App",MainLauncher = true,Icon = "@drawable/icon",Theme = "@style/AppTheme")]
+    [Activity(Label = "AndroidPageLayout.App", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity {
 
         private const string label = nameof(MainActivity);
@@ -21,75 +21,75 @@ namespace AndroidPageLayout.App {
 
             pageLayout = FindViewById<PageLayout>(Resource.Id.PageLayout);
             pageLayout.FirstVisiblePageFloatChanged += currentFirstVisiblePageFloatChanged;
-            if(pageLayout == null) {
+            if (pageLayout == null) {
                 throw new Exception("pagelayout is null");
             }
             try {
-                var f =pageLayout.CurrentFirstVisiblePageFloat;
-            } catch(Exception) {
+                var f = pageLayout.CurrentFirstVisiblePageFloat;
+            } catch (Exception) {
                 throw new Exception("pagelayout.current null");
             }
             setTitle(pageLayout.CurrentFirstVisiblePageFloat);
 
-            using(var page = FindViewById<View>(Resource.Id.SimpleVertical)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleVertical)) {
                 page.Click += click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleHorizontal)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleHorizontal)) {
                 page.Click += click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleNestedScrollingParent)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleNestedScrollingParent)) {
                 page.Click += click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleMultiplePage)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleMultiplePage)) {
                 page.Click += click;
             }
-            using(var page = FindViewById<View>(Resource.Id.DynamicAddOrRemovePage)) {
+            using (var page = FindViewById<View>(Resource.Id.DynamicAddOrRemovePage)) {
                 page.Click += click;
             }
 
             // TwitterLikeImageViewer
-            using(var image = FindViewById<ImageView>(Resource.Id.Image1)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image1)) {
                 image.Click += click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image2)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image2)) {
                 image.Click += click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image3)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image3)) {
                 image.Click += click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image4)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image4)) {
                 image.Click += click;
             }
         }
 
         protected override void OnDestroy() {
-            using(var page = FindViewById<View>(Resource.Id.SimpleVertical)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleVertical)) {
                 page.Click -= click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleHorizontal)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleHorizontal)) {
                 page.Click -= click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleNestedScrollingParent)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleNestedScrollingParent)) {
                 page.Click -= click;
             }
-            using(var page = FindViewById<View>(Resource.Id.SimpleMultiplePage)) {
+            using (var page = FindViewById<View>(Resource.Id.SimpleMultiplePage)) {
                 page.Click -= click;
             }
-            using(var page = FindViewById<View>(Resource.Id.DynamicAddOrRemovePage)) {
+            using (var page = FindViewById<View>(Resource.Id.DynamicAddOrRemovePage)) {
                 page.Click -= click;
             }
 
             // TwitterLikeImageViewer
-            using(var image = FindViewById<ImageView>(Resource.Id.Image1)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image1)) {
                 image.Click -= click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image2)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image2)) {
                 image.Click -= click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image3)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image3)) {
                 image.Click -= click;
             }
-            using(var image = FindViewById<ImageView>(Resource.Id.Image4)) {
+            using (var image = FindViewById<ImageView>(Resource.Id.Image4)) {
                 image.Click -= click;
             }
 
@@ -98,9 +98,9 @@ namespace AndroidPageLayout.App {
             base.OnDestroy();
         }
 
-        private void click(object sender,EventArgs args) {
+        private void click(object sender, EventArgs args) {
             var view = sender as View;
-            switch(view.Id) {
+            switch (view.Id) {
                 case Resource.Id.SimpleVertical:
                     SimpleVerticalActivity.Start(this);
                     break;
@@ -119,21 +119,21 @@ namespace AndroidPageLayout.App {
 
                 // TwitterLikeImageViewer
                 case Resource.Id.Image1:
-                    TwitterLikeImageViewerActivity.Start(this,view as ImageView,0);
+                    TwitterLikeImageViewerActivity.Start(this, view as ImageView, 0);
                     break;
                 case Resource.Id.Image2:
-                    TwitterLikeImageViewerActivity.Start(this,view as ImageView,1);
+                    TwitterLikeImageViewerActivity.Start(this, view as ImageView, 1);
                     break;
                 case Resource.Id.Image3:
-                    TwitterLikeImageViewerActivity.Start(this,view as ImageView,2);
+                    TwitterLikeImageViewerActivity.Start(this, view as ImageView, 2);
                     break;
                 case Resource.Id.Image4:
-                    TwitterLikeImageViewerActivity.Start(this,view as ImageView,3);
+                    TwitterLikeImageViewerActivity.Start(this, view as ImageView, 3);
                     break;
             }
         }
 
-        private void currentFirstVisiblePageFloatChanged(object sender,FirstVisiblePageFloatChangedEventArgs args) {
+        private void currentFirstVisiblePageFloatChanged(object sender, FirstVisiblePageFloatChangedEventArgs args) {
             setTitle(args.FirstVisiblePageFloat);
         }
 

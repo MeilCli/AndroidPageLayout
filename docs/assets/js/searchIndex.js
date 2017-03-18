@@ -34,16 +34,16 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"FirstVisiblePageFloatChangedEventArgs",
-        content:"FirstVisiblePageFloatChangedEventArgs",
+        title:"Resource Attribute",
+        content:"Resource Attribute",
         description:'',
         tags:''
     });
 
     a({
         id:1,
-        title:"Resource Styleable",
-        content:"Resource Styleable",
+        title:"Resource String",
+        content:"Resource String",
         description:'',
         tags:''
     });
@@ -58,8 +58,8 @@ var searchModule = function() {
 
     a({
         id:3,
-        title:"Resource String",
-        content:"Resource String",
+        title:"FirstVisiblePageChangedEventArgs",
+        content:"FirstVisiblePageChangedEventArgs",
         description:'',
         tags:''
     });
@@ -74,38 +74,14 @@ var searchModule = function() {
 
     a({
         id:5,
-        title:"FirstVisiblePageChangedEventArgs",
-        content:"FirstVisiblePageChangedEventArgs",
+        title:"Resource Styleable",
+        content:"Resource Styleable",
         description:'',
         tags:''
     });
 
     a({
         id:6,
-        title:"PageLayout",
-        content:"PageLayout",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:7,
-        title:"Resource Attribute",
-        content:"Resource Attribute",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:8,
-        title:"LinearStackLayout",
-        content:"LinearStackLayout",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:9,
         title:"Resource Layout",
         content:"Resource Layout",
         description:'',
@@ -113,28 +89,40 @@ var searchModule = function() {
     });
 
     a({
-        id:10,
+        id:7,
+        title:"PageLayout",
+        content:"PageLayout",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:8,
+        title:"FirstVisiblePageFloatChangedEventArgs",
+        content:"FirstVisiblePageFloatChangedEventArgs",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:9,
         title:"Resource Id",
         content:"Resource Id",
         description:'',
         tags:''
     });
 
-    y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/FirstVisiblePageFloatChangedEventArgs',
-        title:"FirstVisiblePageFloatChangedEventArgs",
-        description:""
+    a({
+        id:10,
+        title:"LinearStackLayout",
+        content:"LinearStackLayout",
+        description:'',
+        tags:''
     });
 
     y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Styleable',
-        title:"Resource.Styleable",
-        description:""
-    });
-
-    y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Resource',
-        title:"Resource",
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Attribute',
+        title:"Resource.Attribute",
         description:""
     });
 
@@ -145,8 +133,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/LayoutParams',
-        title:"PageLayout.LayoutParams",
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Resource',
+        title:"Resource",
         description:""
     });
 
@@ -157,20 +145,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/PageLayout',
-        title:"PageLayout",
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/LayoutParams',
+        title:"PageLayout.LayoutParams",
         description:""
     });
 
     y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Attribute',
-        title:"Resource.Attribute",
-        description:""
-    });
-
-    y({
-        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/LinearStackLayout',
-        title:"LinearStackLayout",
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Styleable',
+        title:"Resource.Styleable",
         description:""
     });
 
@@ -181,8 +163,26 @@ var searchModule = function() {
     });
 
     y({
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/PageLayout',
+        title:"PageLayout",
+        description:""
+    });
+
+    y({
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/FirstVisiblePageFloatChangedEventArgs',
+        title:"FirstVisiblePageFloatChangedEventArgs",
+        description:""
+    });
+
+    y({
         url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/Id',
         title:"Resource.Id",
+        description:""
+    });
+
+    y({
+        url:'/AndroidPageLayout/AndroidPageLayout/api/AndroidPageLayout/LinearStackLayout',
+        title:"LinearStackLayout",
         description:""
     });
 
