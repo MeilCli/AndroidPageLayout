@@ -47,21 +47,15 @@ namespace AndroidPageLayout {
         /// This layout allow multiple page
         /// </summary>
         public int MultiplePageSize {
-            get {
-                return linearStackLayout.MultiplePageSize;
-            }
-            set {
-                linearStackLayout.MultiplePageSize = value;
-            }
+            get => linearStackLayout.MultiplePageSize;
+            set => linearStackLayout.MultiplePageSize = value;
         }
 
         /// <summary>
         /// This layout's orientaion, page is stacked to orientation direction
         /// </summary>
         public int Orientation {
-            get {
-                return linearStackLayout.Orientation;
-            }
+            get => linearStackLayout.Orientation;
             set {
                 linearStackLayout.Orientation = value;
                 setLinearStackLayoutParams();
@@ -71,20 +65,14 @@ namespace AndroidPageLayout {
         /// <summary>
         /// This layout' page size
         /// </summary>
-        public int PageCount {
-            get {
-                return linearStackLayout.ChildCount;
-            }
-        }
+        public int PageCount => linearStackLayout.ChildCount;
 
         private float _currentFirstVisiblePageFloat;
         /// <summary>
         /// The number of current first visible page with floating point
         /// </summary>
         public float CurrentFirstVisiblePageFloat {
-            get {
-                return _currentFirstVisiblePageFloat;
-            }
+            get => _currentFirstVisiblePageFloat;
             private set {
                 if (_currentFirstVisiblePageFloat != value) {
                     _currentFirstVisiblePageFloat = value;
@@ -98,9 +86,7 @@ namespace AndroidPageLayout {
         /// The number of current first visible page
         /// </summary>
         public int CurrentFirstVisiblePage {
-            get {
-                return _currentFirstVisiblePage;
-            }
+            get => _currentFirstVisiblePage;
             private set {
                 if (_currentFirstVisiblePage != value) {
                     _currentFirstVisiblePage = value;
@@ -211,8 +197,7 @@ namespace AndroidPageLayout {
         }
 
         protected override void OnRestoreInstanceState(IParcelable state) {
-            if (state is Bundle) {
-                var bundle = state as Bundle;
+            if (state is Bundle bundle) {
                 int page = bundle.GetInt(savedCurrentPageKey);
                 if (page >= 0 && page + (MultiplePageSize - 1) < PageCount) {
                     DefaultPage = page;
@@ -561,14 +546,14 @@ namespace AndroidPageLayout {
         }
 
         protected override ViewGroup.LayoutParams GenerateLayoutParams(ViewGroup.LayoutParams p) {
-            if (p is LayoutParams) {
-                return new LayoutParams(p as LayoutParams);
-            } else if (p is SlideLayout.LayoutParams) {
-                return new LayoutParams(p as SlideLayout.LayoutParams);
-            } else if (p is FrameLayoutCompat.LayoutParams) {
-                return new LayoutParams(p as FrameLayoutCompat.LayoutParams);
-            } else if (p is MarginLayoutParams) {
-                return new LayoutParams(p as MarginLayoutParams);
+            if (p is LayoutParams layoutParams) {
+                return new LayoutParams(layoutParams);
+            } else if (p is SlideLayout.LayoutParams slideLayoutParams) {
+                return new LayoutParams(slideLayoutParams);
+            } else if (p is FrameLayoutCompat.LayoutParams frameLayoutParams) {
+                return new LayoutParams(frameLayoutParams);
+            } else if (p is MarginLayoutParams marginLayoutParams) {
+                return new LayoutParams(marginLayoutParams);
             }
             return new LayoutParams(p);
         }

@@ -16,9 +16,7 @@ namespace AndroidPageLayout {
 
         private int _multiplePageSize = 1;
         public int MultiplePageSize {
-            get {
-                return _multiplePageSize;
-            }
+            get => _multiplePageSize;
             set {
                 if (value < 0) {
                     throw new NotSupportedException("not support less thann 0 page size");
@@ -30,9 +28,7 @@ namespace AndroidPageLayout {
 
         private int _orientation = Vertical;
         public int Orientation {
-            get {
-                return _orientation;
-            }
+            get => _orientation;
             set {
                 if (value != Vertical && value != Horizontal) {
                     throw new NotSupportedException("not support undefined orientation");

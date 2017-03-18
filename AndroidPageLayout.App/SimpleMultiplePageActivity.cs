@@ -63,8 +63,7 @@ namespace AndroidPageLayout.App {
         }
 
         private void click(object sender, EventArgs args) {
-            var textView = sender as TextView;
-            if (textView != null) {
+            if (sender is TextView textView) {
                 Toast.MakeText(this, $"Clicked TextView: {textView.Text}", ToastLength.Short).Show();
             }
         }
