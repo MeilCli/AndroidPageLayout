@@ -118,6 +118,16 @@ namespace AndroidPageLayout {
             }
         }
 
+        private int? _scaledTouchSlop;
+        private int scaledTouchSlop {
+            get {
+                if (_scaledTouchSlop == null) {
+                    _scaledTouchSlop = ViewConfiguration.Get(Context).ScaledPagingTouchSlop;
+                }
+                return _scaledTouchSlop.Value;
+            }
+        }
+
         public PageLayout(Context context) : this(context, null) { }
 
         public PageLayout(Context context, IAttributeSet attr) : this(context, attr, 0) { }
@@ -220,8 +230,9 @@ namespace AndroidPageLayout {
                 if (result != CurrentDragChildViewDraggedTop) {
                     // if dragging, not want to be absorbed parent view
                     draggingPoint += dy;
-                    if (draggingPoint > 50) {
+                    if (Math.Abs(draggingPoint) > scaledTouchSlop) {
                         Parent.RequestDisallowInterceptTouchEvent(true);
+                        isTouchHandled = true;
                     }
                 }
                 if (result + (distanceHeightWithOrientationPerPage * (PageCount - MultiplePageSize)) < 0) {
@@ -233,9 +244,6 @@ namespace AndroidPageLayout {
                     return 0;
                 }
             }
-            if (isTouchHandled == false) {
-                isTouchHandled = false;
-            }
             return result;
         }
 
@@ -245,8 +253,9 @@ namespace AndroidPageLayout {
                 if (result != CurrentDragChildViewLayoutedLeft) {
                     // if dragging, not want to be absorbed parent view
                     draggingPoint += dx;
-                    if (draggingPoint > 50) {
+                    if (Math.Abs(draggingPoint) > scaledTouchSlop) {
                         Parent.RequestDisallowInterceptTouchEvent(true);
+                        isTouchHandled = true;
                     }
                 }
                 if (result + (distanceWidthWithOrientationPerPage * (PageCount - MultiplePageSize)) < 0) {
@@ -257,9 +266,6 @@ namespace AndroidPageLayout {
                     isTouchHandled = true;
                     return 0;
                 }
-            }
-            if (isTouchHandled == false) {
-                isTouchHandled = false;
             }
             return result;
         }
@@ -273,6 +279,10 @@ namespace AndroidPageLayout {
                 }
             }
             return base.OnInterceptTouchEvent(ev) || isTouchHandled;
+        }
+
+        public override bool OnTouchEvent(MotionEvent e) {
+            return base.OnTouchEvent(e) || isTouchHandled;
         }
 
         private View findLinearStackLayoutTopChildUnder(int x, int y) {
